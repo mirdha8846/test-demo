@@ -20,6 +20,9 @@ public class Client {
     @JoinColumn(name = "company_id")
     private Company company;
 
+    @Column(name = "phone")
+    private String phone;
+
     // Default Constructor
     public Client() {
     }
@@ -29,6 +32,14 @@ public class Client {
         this.name = name;
         this.email = email;
         this.company = company;
+    }
+
+    // Full Parameterized Constructor
+    public Client(String name, String email, Company company, String phone) {
+        this.name = name;
+        this.email = email;
+        this.company = company;
+        this.phone = phone;
     }
 
     // Getters and Setters
@@ -64,6 +75,14 @@ public class Client {
         this.company = company;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -71,6 +90,7 @@ public class Client {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", company=" + (company != null ? company.getId() : null) +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

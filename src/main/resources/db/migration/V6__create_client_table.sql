@@ -6,5 +6,6 @@ CREATE TABLE client (
     name VARCHAR(150) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     company_id BIGINT,
+    phone VARCHAR(20),
     CONSTRAINT fk_client_company FOREIGN KEY (company_id) REFERENCES company(id) ON DELETE SET NULL
 );
