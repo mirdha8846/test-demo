@@ -4,5 +4,6 @@
 CREATE TABLE project (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    budget DOUBLE PRECISION NOT NULL
+    budget DOUBLE PRECISION NOT NULL,
+    description VARCHAR(500)
 );

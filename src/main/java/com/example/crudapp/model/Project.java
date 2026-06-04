@@ -16,6 +16,9 @@ public class Project {
     @Column(name = "budget", nullable = false)
     private Double budget;
 
+    @Column(name = "description")
+    private String description;
+
     // Default Constructor (required by JPA)
     public Project() {
     }
@@ -24,6 +27,13 @@ public class Project {
     public Project(String name, Double budget) {
         this.name = name;
         this.budget = budget;
+    }
+
+    // Full Parameterized Constructor
+    public Project(String name, Double budget, String description) {
+        this.name = name;
+        this.budget = budget;
+        this.description = description;
     }
 
     // Getters and Setters
@@ -51,12 +61,21 @@ public class Project {
         this.budget = budget;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Project{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", budget=" + budget +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
