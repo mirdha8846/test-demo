@@ -16,6 +16,9 @@ public class Role {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "created_at")
+    private java.time.LocalDateTime createdAt;
+
     // Default Constructor
     public Role() {
     }
@@ -24,6 +27,13 @@ public class Role {
     public Role(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    // Full Parameterized Constructor
+    public Role(String name, String description, java.time.LocalDateTime createdAt) {
+        this.name = name;
+        this.description = description;
+        this.createdAt = createdAt;
     }
 
     // Getters and Setters
@@ -51,12 +61,21 @@ public class Role {
         this.description = description;
     }
 
+    public java.time.LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(java.time.LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return "Role{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
                 '}';
     }
 }
