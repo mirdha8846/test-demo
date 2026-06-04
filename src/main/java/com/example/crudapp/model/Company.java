@@ -19,6 +19,9 @@ public class Company {
     @Column(name = "address")
     private String address;
 
+    @Column(name = "website")
+    private String website;
+
     // Default Constructor
     public Company() {
     }
@@ -28,6 +31,14 @@ public class Company {
         this.name = name;
         this.registrationNumber = registrationNumber;
         this.address = address;
+    }
+
+    // Full Parameterized Constructor
+    public Company(String name, String registrationNumber, String address, String website) {
+        this.name = name;
+        this.registrationNumber = registrationNumber;
+        this.address = address;
+        this.website = website;
     }
 
     // Getters and Setters
@@ -63,6 +74,14 @@ public class Company {
         this.address = address;
     }
 
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
     @Override
     public String toString() {
         return "Company{" +
@@ -70,6 +89,7 @@ public class Company {
                 ", name='" + name + '\'' +
                 ", registrationNumber='" + registrationNumber + '\'' +
                 ", address='" + address + '\'' +
+                ", website='" + website + '\'' +
                 '}';
     }
 }

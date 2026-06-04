@@ -5,7 +5,8 @@ CREATE TABLE company (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     registration_number VARCHAR(50) UNIQUE NOT NULL,
-    address VARCHAR(255)
+    address VARCHAR(255),
+    website VARCHAR(255)
 );
 
 CREATE TABLE employee_project (
