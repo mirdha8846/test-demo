@@ -55,6 +55,9 @@ public class EmployeeService {
         employee.setLastName(employeeDetails.getLastName());
         employee.setDepartment(employeeDetails.getDepartment());
         employee.setSalary(employeeDetails.getSalary());
+        employee.setPhoneNumber(employeeDetails.getPhoneNumber());
+        employee.setHireDate(employeeDetails.getHireDate());
+        employee.setStatus(employeeDetails.getStatus());
 
         return employeeRepository.save(employee);
     }

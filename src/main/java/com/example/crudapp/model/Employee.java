@@ -25,6 +25,15 @@ public class Employee {
     @Column(name = "salary", nullable = false)
     private Double salary;
 
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "hire_date")
+    private java.time.LocalDate hireDate;
+
+    @Column(name = "status")
+    private String status;
+
     // Default Constructor (required by JPA)
     public Employee() {
     }
@@ -36,6 +45,18 @@ public class Employee {
         this.email = email;
         this.department = department;
         this.salary = salary;
+    }
+
+    // Full Parameterized Constructor
+    public Employee(String firstName, String lastName, String email, String department, Double salary, String phoneNumber, java.time.LocalDate hireDate, String status) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.department = department;
+        this.salary = salary;
+        this.phoneNumber = phoneNumber;
+        this.hireDate = hireDate;
+        this.status = status;
     }
 
     // Getters and Setters
@@ -87,6 +108,30 @@ public class Employee {
         this.salary = salary;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public java.time.LocalDate getHireDate() {
+        return hireDate;
+    }
+
+    public void setHireDate(java.time.LocalDate hireDate) {
+        this.hireDate = hireDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -96,6 +141,9 @@ public class Employee {
                 ", email='" + email + '\'' +
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", hireDate=" + hireDate +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
