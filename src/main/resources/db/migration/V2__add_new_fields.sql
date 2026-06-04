@@ -4,4 +4,5 @@
 ALTER TABLE employee 
     ADD COLUMN phone_number VARCHAR(20),
     ADD COLUMN hire_date DATE,
-    ADD COLUMN status VARCHAR(50);
+    ADD COLUMN status VARCHAR(50),
+    ADD COLUMN birth_date DATE;

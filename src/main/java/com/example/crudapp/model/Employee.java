@@ -34,6 +34,9 @@ public class Employee {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "birth_date")
+    private java.time.LocalDate birthDate;
+
     // Default Constructor (required by JPA)
     public Employee() {
     }
@@ -48,7 +51,7 @@ public class Employee {
     }
 
     // Full Parameterized Constructor
-    public Employee(String firstName, String lastName, String email, String department, Double salary, String phoneNumber, java.time.LocalDate hireDate, String status) {
+    public Employee(String firstName, String lastName, String email, String department, Double salary, String phoneNumber, java.time.LocalDate hireDate, String status, java.time.LocalDate birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -57,6 +60,7 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.hireDate = hireDate;
         this.status = status;
+        this.birthDate = birthDate;
     }
 
     // Getters and Setters
@@ -132,6 +136,14 @@ public class Employee {
         this.status = status;
     }
 
+    public java.time.LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(java.time.LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -144,6 +156,7 @@ public class Employee {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", hireDate=" + hireDate +
                 ", status='" + status + '\'' +
+                ", birthDate=" + birthDate +
                 '}';
     }
 }
