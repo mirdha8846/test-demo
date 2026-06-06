@@ -25,6 +25,9 @@ public class AuditLog {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "severity")
+    private String severity;
+
     // Default Constructor
     public AuditLog() {
     }
@@ -36,6 +39,16 @@ public class AuditLog {
         this.changedBy = changedBy;
         this.changedAt = changedAt;
         this.description = description;
+    }
+
+    // Full Parameterized Constructor
+    public AuditLog(String tableName, String action, String changedBy, java.time.LocalDateTime changedAt, String description, String severity) {
+        this.tableName = tableName;
+        this.action = action;
+        this.changedBy = changedBy;
+        this.changedAt = changedAt;
+        this.description = description;
+        this.severity = severity;
     }
 
     // Getters and Setters
@@ -87,6 +100,14 @@ public class AuditLog {
         this.description = description;
     }
 
+    public String getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
     @Override
     public String toString() {
         return "AuditLog{" +
@@ -96,6 +117,7 @@ public class AuditLog {
                 ", changedBy='" + changedBy + '\'' +
                 ", changedAt=" + changedAt +
                 ", description='" + description + '\'' +
+                ", severity='" + severity + '\'' +
                 '}';
     }
 }

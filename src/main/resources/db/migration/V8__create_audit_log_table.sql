@@ -7,5 +7,6 @@ CREATE TABLE audit_log (
     action VARCHAR(20) NOT NULL,
     changed_by VARCHAR(100),
     changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    description TEXT
+    description TEXT,
+    severity VARCHAR(20) DEFAULT 'INFO'
 );
